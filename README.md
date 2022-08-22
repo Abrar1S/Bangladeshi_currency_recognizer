@@ -1,6 +1,5 @@
 # Bangladeshi currency recognizer
 •	Using Convolutional neural network to recognize Bangladesh currency(Bank notes).                                                                                       
-•	Not only built a custom model pretrained model is also used in order compare performance.                                                                               
-•	ResNet-50 and VGG16 is used.
+•	A custom CNN model and two pretrained model applied separately in order to understand the comparison.                                                                   •	ResNet-50 and VGG16 is being used.
 
 
