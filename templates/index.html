@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <!--Css Link  put after title  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <title>Bank Note Recognizer</title>
+</head>
+<body>
+    <div style = "margin-top: 50px;" class="ui container">
+    <h3  class="ui center aligned header">Bank Note Recognizer</h3>
+    
+    <form class = "ui form"  action="/own_model" method="post" enctype="multipart/form-data">
+        <p><input class = 'form-control' type="file" id="file" name="imagefile"></p>  
+        <button class = "fluid ui teal button"   type="submit">Predict with Custom Model</button>
+        {% if prediction_own %}
+            <img src="{{ img_path }}" id="img-upload" alt="img_path" class="img-upload"/>
+            <h2> Your Prediction   : <i> {{prediction_own}} </i></h2>
+        {% endif %}
+    </form>
+
+    <form class = "ui form"  action="/ResNet50_model" method="post" enctype="multipart/form-data">
+        <p><input class = 'form-control' type="file" id="file" name="imagefile"></p>  
+        <button class = "fluid ui teal button"   type="submit">Predict with ResNet 50</button>
+        {% if prediction_resnet50 %}
+            <img src="{{ img_path }}" id="img-upload" alt="img_path" class="img-upload"/>
+            <h2> Your Prediction   : <i> {{prediction_resnet50}} </i></h2>
+        {% endif %}
+    </form>
+
+
+    <form class = "ui form"  action="/VGG16_model" method="post" enctype="multipart/form-data">
+        <p><input class = 'form-control' type="file" id="file" name="imagefile"></p>  
+        <button class = "fluid ui teal button"   type="submit">Predict with VGG 16</button>
+        {% if prediction_vgg16 %}
+            <img src="{{ img_path }}" id="img-upload" alt="img_path" class="img-upload"/>
+            <h2> Your Prediction   : <i> {{prediction_vgg16}} </i></h2>
+        {% endif %}
+    </form>
+
+
+
+
+
+
+
+        <!-- <form class = "ui form"  action="{{url_for('bank_note_recognizer')}}" method="post" enctype="multipart/form-data">
+            <p><input class = 'form-control' type="file" id="file" name="imagefile"></p>  
+            <button class = "fluid ui teal button"  type="submit">Predict with Custom Model</button> 
+        </form>
+        <form class = "ui form"  action="{{url_for('ResNet50_model')}}" method="post" enctype="multipart/form-data">
+            <p><input class = 'form-control' type="file" id="file" name="imagefile"></p>
+            <button class = "fluid ui teal button"  type="submit">Predict with ResNet 50</button>  
+        </form>
+        <form class = "ui form"  action="{{url_for('VGG16_model')}}" method="post" enctype="multipart/form-data">
+            <p><input class = 'form-control' type="file" id="file" name="imagefile"></p>  
+            <button class = "fluid ui teal button"  type="submit">Predict with VGG 16</button> 
+        </form> -->
+
+</div>
+</body>
+</html>
