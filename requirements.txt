@@ -7,7 +7,7 @@ antlr4-python3-runtime==4.9.3
 appdirs==1.4.4
 astunparse==1.6.3
 async-timeout==4.0.2
-asyncssh==2.12.0
+asyncssh==2.14.1
 atpublic==3.1.1
 attrs==22.1.0
 billiard==3.6.4.0
